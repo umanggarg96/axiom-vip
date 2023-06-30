@@ -1,4 +1,6 @@
 package axiom_apb_pkg;
+    import uvm_pkg::*;
+    `include "uvm_macros.svh"
 
     `include "config/apb_types.svh"
     `include "config/apb_config.svh"

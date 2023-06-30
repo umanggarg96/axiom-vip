@@ -18,6 +18,8 @@ class apb_agent extends uvm_agent;
         super.build_phase(phase);
         if(!uvm_config_db#(virtual axiom_apb_intf)::get(this, "", "vif", vif))
             `uvm_fatal(ERROR_ID, "Unable to fetch vif")
+        if(!uvm_config_db#(apb_config)::get(this, "", "cfg", cfg))
+            `uvm_fatal(ERROR_ID, "Unable to fetch cfg")
 
         if(cfg.agent_type != APB_MONITOR) begin
             sqr = apb_sequencer::type_id::create("sqr");
