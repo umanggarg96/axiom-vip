@@ -18,3 +18,7 @@ check-env:
 ifndef AXIOM_VIP
 	$(error AXIOM_VIP is undefined)
 endif
+
+.PHONY: clean
+clean:
+	rm -rf  work transcript *.wlf
